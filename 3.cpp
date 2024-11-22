@@ -13,6 +13,7 @@ main()
         cout<<"a is maximum\n";
     else
         cout<<"b is maximum\n";
+        
 
     cout<<"Enter Number:";
     cin>>a;
