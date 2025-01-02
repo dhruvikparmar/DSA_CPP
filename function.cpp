@@ -9,18 +9,14 @@ class student
         int age;
         int gr_id;
         string city;
-            void getdata()
+            student(string n,string s,int a,int g,string c)
             {
-                cout<<"Enter Name:";
-                cin>>name;
-                cout<<"Enter Surname:";
-                cin>>surname;
-                cout<<"Enter Age:";
-                cin>>age;
-                cout<<"Enter Gr_id:";
-                cin>>gr_id;
-                cout<<"Enter City:";
-                cin>>city;
+                this->name = n;
+                this->surname = s;
+                this->age = a;
+                this->gr_id=g;
+                this->city=c;
+
             }
             void setdata()
             {
@@ -33,11 +29,18 @@ class student
 };
 main()
 {
-    student s;
-    for(int i=0;i<8;i++)
-    {
-        s.getdata();
-        s.setdata();
-    }
-    
+    string n,s,c;
+    int a,g;
+    cout<<"Enter Name:";
+    cin>>n;
+    cout<<"Enter Surname:";
+    cin>>s;
+    cout<<"Enter Age:";
+    cin>>a;
+    cout<<"Enter Gr_Id:";
+    cin>>g;
+    cout<<"Enter City:";
+    cin>>c;  
+    student s1(n,s,a,g,c);
+    s1.setdata();
 }
