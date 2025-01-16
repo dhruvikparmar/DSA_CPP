@@ -27,22 +27,36 @@ class bank_account
     }
     void getbalance()
     {
-        balance=depo-with;
-        cout<<"\nCurrent Balance "<<balance;
+        if(with<depo)
+        {
+            balance=depo-with;
+            cout<<"\nCurrent Balance "<<balance;
+        }
+        else
+        {
+            cout<<"\nWithdrawl Disapproved";
+        }
     }
     void display_acc_info()
     {
-        cout<<"\n\nBalance before withdraw:"<<depo;
-        balance=depo-with;
-        cout<<"\nAmount To withdraw:"<<with;
-        cout<<"\nCurrent Balance:"<<balance;
+        if(depo>0)
+        {
+            cout<<"\n\nBalance before withdraw:"<<depo;
+            balance=depo-with;
+            cout<<"\nAmount To withdraw:"<<with;
+            cout<<"\nCurrent Balance:"<<balance;
+        }
+        else
+        {
+            cout<<"Deposit Amount first...";
+        }
     } 
 };
 class saving_account:public bank_account
 {
     public:
-            float interest_rate,percentage;
-            int days;
+        float interest_rate,percentage;
+        int days;
     void calculate_interest_rate()
     {
         cout<<"Enter Amount:";
@@ -62,8 +76,8 @@ class checking_account:public bank_account
             int od,current_balance;
     void overdraft()
     {
-        cout<<"\nEnter Amount To Deposit:";
-        cin>>depo;
+        // cout<<"\nEnter Amount To Deposit:";
+        // cin>>depo;
         cout<<"\nEnter Amount for withdraw:";
         cin>>od;
         if(depo<od)
@@ -120,6 +134,7 @@ main()
                     s.calculate_interest_rate();
                     break;                    
             case 3:
+                    b.display_acc_info();
                     c.overdraft();
                     break;
             case 4:
