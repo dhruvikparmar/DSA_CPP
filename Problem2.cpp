@@ -12,7 +12,6 @@ main()
         cout<<"arr["<<k<<"]"<<" ";
         cin>>arr[k];
     }
-    // //find second largest elements in the array
     for(int i=0;i<5;i++)
     {
         for(int j=0;j<5-i;j++)
@@ -25,6 +24,8 @@ main()
             }
         }
     }
+    
+    // //find second largest elements in the array
     for(int i=0;i<n;i++)
     {
         cout<<arr[i]<<" ";
